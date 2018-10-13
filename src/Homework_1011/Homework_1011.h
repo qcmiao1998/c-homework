@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <stdbool.h>
+#include <math.h>
 
-int Problem_5_5(int x);
+double Problem_5_5(double x);
 typedef enum {
     A = 'A', B = 'B', C = 'C', D = 'D', E = 'E'
 } Grade;

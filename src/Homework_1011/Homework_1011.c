@@ -1,15 +1,14 @@
 #include "Homework_1011.h"
 
 int main(){
-    printf("%d\n", Problem_5_5(10));
+    printf("%f\n", Problem_5_5(10));
     printf("%c\n", Problem_5_6(80));
     Problem_5_7(123456);
     printf("%f", Problem_5_8(1234567));
 }
 
-int Problem_5_5(int x){
-    // 若需计算浮点等, 代码基本类似. 毕竟没有重载和泛型就只写一个 int 的了.
-    int y;
+double Problem_5_5(double x){
+    double y;
     if (x < 1)
         y = x;
     else if (x >= 1 && x < 10)
@@ -60,7 +59,8 @@ void Problem_5_7(unsigned int num) {
     }
     printf("\n");
 }
-# define USEIF true // set to false if want to use switch.
+
+# define USEIF false // set to false if want to use switch.
 double Problem_5_8(double profit){
     double reward = 0;
 #if USEIF
@@ -77,7 +77,7 @@ double Problem_5_8(double profit){
     else
         reward = Problem_5_8(1000000) + (profit - 1000000) * 0.01;
 #else
-    switch ((int)profit){
+    switch ((int)ceil(profit)){
         case 0 ... 100000:
             reward = profit * 0.1;
             break;
