@@ -1,8 +1,8 @@
 #include "Homework_1025.h"
 
 int main(){
-    printf("%lf\n", Problem_6_11(41.));
-    printf("%lf\n", Problem_6_12());
+    printf("%.15lf\n", Problem_6_11(20.));
+    printf("%.15lf\n", Problem_6_12());
     Problem_6_14();
     return 0;
 }
@@ -13,7 +13,7 @@ double Problem_6_11(double radicand) {
     do{
         temp = result;
         result = 0.5 * (temp + radicand / temp);
-    } while (temp - result <= -0.00001 || temp - result >= 0.00001);
+    } while (fabs(temp - result) >= 0.00001);
     return result;
 }
 
@@ -22,7 +22,7 @@ double Problem_6_12() {
     do{
         temp = result;
         result = temp - (2 * pow(temp, 3.) - 4 * pow(temp, 2.) + 3. * temp - 6.) / (6. * pow(temp, 2.) - 8.0 * temp + 3.);
-    } while (temp - result <= -0.00001 || temp - result >= 0.00001);
+    } while (fabs(temp - result) >= 0.00001);
     return result;
 }
 
