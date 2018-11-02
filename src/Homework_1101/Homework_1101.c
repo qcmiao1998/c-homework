@@ -29,14 +29,12 @@ void Problem_7_1() {
                 break;
             }
         }
-        if (array[i] != 1 && i != 1) printf("%d; ", array[i]);
+        if (array[i] != 1 || i == 0) printf("%d; ", array[i]);
     }
 }
 
 int Problem_7_3(int array[3][3]) {
-    int sum;
-    sum = array[0][0] + array[1][1] + array[2][2] + array[0][2] + array[2][0];
-    return sum;
+    return array[0][0] + array[1][1] + array[2][2] + array[0][2] + array[2][0];
 }
 
 int *Problem_7_4(int count, int *array, int addNum) {
